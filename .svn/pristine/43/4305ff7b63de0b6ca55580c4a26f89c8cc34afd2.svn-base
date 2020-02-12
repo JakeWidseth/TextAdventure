@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package TextAdventure;
+
+/**
+ *
+ * @author Jake.Widseth
+ */
+public class Main
+{
+    Item device = new Item("Gif of a Jumpscare", "It's a gif... of a jumpscare.");
+    Item candle = new Item("Candle", "A wax candle with a flickering flame.");
+    Item ball = new Item("Ancient Ball of Gravity", "A heavy iron ball that makes gravity stronger.");
+    Item stick = new Item("Stick", "It's a stick.");
+    
+    Creature skeleton = new Creature("Skeleton", "a spooky scary skeleton", "You show it the Gif of a jumpscare, it crumbles into a pile of bones...", device);
+    Creature shadow = new Creature("Shadow", "It is completely devoid of light...", "As you bring the candle out, it begins to fade away.", candle);
+    Creature demon = new Creature("Fire Demon", "It flies above the ground with it's wings, it's skin appears to be made out of fire.", "The fire demon succumbs to the Ancient Ball of Gravity, falling to the the water.", ball);
+    Creature human = new Creature("Dead man", "He appears to be dead, better not wait around and end up like him.", "You poke him with a stick, he's already dead, congrats!", stick);
+    
+    Exit exit1, exit2, exit3, exit4, exit5, exit6, exit7, exit8, exit9, exit10, exit11, exit12, exit13 = new Exit();
+    
+    
+    
+    
+    Room room1, room2, room3, room4, room5, room6, room7, room8, room9, room10 = new Room();
+    
+    
+    exit1.set
+    
+    
+    
+    
+    
+}

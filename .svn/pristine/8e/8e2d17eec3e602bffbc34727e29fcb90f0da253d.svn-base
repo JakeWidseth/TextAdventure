@@ -1,0 +1,102 @@
+package TextAdventure;
+
+import java.util.ArrayList; 
+
+/**
+ *
+ * @author Alex
+ */
+
+public class Player 
+{
+    private String name; 
+    private String description; 
+    
+    private ArrayList<Item> inventory; 
+    
+    public Player(String name, String description)
+    {
+        this.name        = name; 
+        this.description = description; 
+        
+        inventory = new ArrayList<Item>(); 
+    }
+    
+    public String getName()
+    {
+        return name; 
+    }
+    
+    public String getDescription()
+    {
+        return description; 
+    }
+    
+    public void addItemToInventory(Item item)
+    {
+        inventory.add(item); 
+    }
+    
+    public void removeItemFromInventory(Item item)
+    {
+        inventory.remove(item); 
+    }
+    
+    public boolean isItemInInventory(Item item)
+    {
+        return inventory.contains(item); 
+    }
+    
+    public Item getItemFromInventory(String item)
+    {
+        for(Item currentItem : inventory)
+        {
+            if(item.equalsIgnoreCase(currentItem.getName()))
+            {
+                return currentItem; 
+            }
+        }
+        
+        return null; 
+    }
+        
+    public String listInventory()
+    {
+        if(inventory.size() == 0)
+        {
+            return "You're not currently carrying anything.\n";
+        }
+        
+        String inventoryDescription = ""; 
+        
+        for(Item item : inventory)
+        {
+            inventoryDescription += item.getName() + " - " + item.getDescription() + "\n"; 
+        }
+        
+        return inventoryDescription; 
+    }
+}
+
+
+
+Exit exit1 = new Exit("Hallway", "A stone hallway that leads to a dark room.", "You move through the damp hallway...", room2, null, false);
+    Exit exit2 = new Exit("Hallway", "A stone hallway that leads back to the room you came from.", "You move through the damp hallway...", room1, null, false);
+    Exit exit3 = new Exit("Wooden Door", "A wooden door that likely leads to another room.", "You open the door, and pass through", room3, null, true);
+    Exit exit4 = new Exit("Crawlspace", "A small space that is just wide enough to fit through", "You slip through the crawlspace", room4, null, false);
+    Exit exit5 = new Exit("Trapdoor", "A small door in the ground...", "You open the door, and head down.", room5, null, false);
+    Exit exit6 = new Exit("Ladder", "A ladder that leads up.", "You climb up the ladder", room3, null, false);
+    Exit exit7 = new Exit("Long Hallway", "A long hallway, wonder how long it is...", "You head down the long hallway, you see decorative sets of armor lining the walls.", room6, false, true);
+    Exit exit8 = new Exit("Steel Door","A steel door, its cold to the touch.", "You open the door, and head down some stairs", room7, null, false);
+    Exit exit9 = new Exit("Stairs", "The stairs lead up out of the pool", "You wade out of the water, and walk up the stairs", room8, null, false);
+    Exit exit10 = new Exit("Stairs","The stairs lead down, back to the room you were just in.", "You walk back down the stairs...", room7, null, false);
+    Exit exit11 = new Exit("Tunnel","You can see a tunnel underwater, perhaps it leads somewhere...", "You swim down, and into the tunnel...", room9, null, false);
+    Exit exit12 = new Exit("Tunnel","The tunnel that leads you back to hte preivous room.", "You head back through the tunnel.", room7, null, false);
+    Exit exit13 = new Exit("Large Door", "That's a big ass door.", "You push the door with all your might, it inches open and you sneak through.", room10, null, true);
+    
+    Room room1 = new Room(exit1, exit3, null, skeleton, "You wake up in a dimly lit room. You see 2 exits, one of which is blocked by a skeleton", "Dungeon");
+    Room room2 = new Room(exit2, device, null, "A small little room with device that displays moving images.", "Dungeon");
+    Room room3 = new Room(exit4, exit7, null, shadow, "You enter a room that is very damp, blocking the door, is a large shadow.", "Dungeon");
+    Room room4 = new Room(exit5, candle, null, "A small room, barely lit by a candle in the corner.", "Cell");
+    Room room5 = new Room(exit6, stick, null, "A very dark room, doesn't appear to be anything here, except something thats... brown and sticky...", "Secret Exit");
+    Room room6 = new Room(exit1, ball, skeleton, description, name)
